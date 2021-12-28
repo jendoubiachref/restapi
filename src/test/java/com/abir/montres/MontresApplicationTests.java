@@ -19,7 +19,7 @@ class MontresApplicationTests {
 	
 	@Test
 	public void testCreateMontre() {
-	Montre prod = new Montre("Rolex",25000000.0);
+	Montre prod = new Montre("Rolex",25000000.0, null);
 	
 		montreRepository.save(prod);
 		
@@ -34,7 +34,7 @@ class MontresApplicationTests {
 	}
 	
 	@Test
-	public void testUpdateProduit()
+	public void testUpdateMontre()
 	{
 		Montre p = montreRepository.findById(2L).get();
 		p.setPrixMontre(26000000.0);

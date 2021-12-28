@@ -29,5 +29,46 @@ private String descriptionCat;
 @OneToMany(mappedBy = "categorie")
 private List<Montre> montres;
 
+//added all 
+
+public Categorie() {
+	super();
+	}
+
+
+
+
+public void setIdCat(long idCat) {
+	this.idCat = idCat; // added
+	// TODO Auto-generated method stub	
+}
+public void setNomCat(String nomCat) {
+	this.nomCat = nomCat; // added
+	// TODO Auto-generated method stub	
+}
+public void setDescriptionCat(String descriptionCat) {
+	this.descriptionCat = descriptionCat; // added
+	// TODO Auto-generated method stub	
+}
+
+
+
+public Long getIdCat() {
+	return idCat;
+}
+
+public String getNomCat() {
+	return nomCat;
+}
+
+public String getDescriptionCat() {
+	return descriptionCat;
+}
+
+
+
+
+
+
 
 }
