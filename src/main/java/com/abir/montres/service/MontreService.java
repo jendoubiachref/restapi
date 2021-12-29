@@ -19,4 +19,9 @@ List<Montre> findByCategorie (Categorie categorie);
 List<Montre> findByCategorieIdCat(Long id);
 List<Montre> findByOrderByNomMontreAsc();
 List<Montre> trierMontresNomsPrix();
+ 
+List<Categorie> listCategories();
+
+//added
+ 
 }

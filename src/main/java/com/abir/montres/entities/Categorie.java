@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -24,6 +27,11 @@ public class Categorie {
 private Long idCat;
 private String nomCat;
 private String descriptionCat;
+
+@Override
+public String toString() {
+	return ReflectionToStringBuilder.reflectionToString(this); 
+	}
 
 @JsonIgnore
 @OneToMany(mappedBy = "categorie")
@@ -64,6 +72,11 @@ public String getNomCat() {
 public String getDescriptionCat() {
 	return descriptionCat;
 }
+
+
+//
+ 
+ 
 
 
 

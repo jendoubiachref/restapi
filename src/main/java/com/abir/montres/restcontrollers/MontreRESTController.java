@@ -2,6 +2,7 @@ package com.abir.montres.restcontrollers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+ 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.abir.montres.entities.Montre;
 import com.abir.montres.service.MontreService;
+import com.abir.montres.entities.Categorie;
+//import com.abir.montres.service.CategorieService;
 
 @RestController
 @RequestMapping("/api")
@@ -19,6 +22,11 @@ import com.abir.montres.service.MontreService;
 public class MontreRESTController {
 @Autowired
 MontreService montreService;
+//CategorieService categorieService;
+
+
+
+
 
 @RequestMapping(method = RequestMethod.GET)
 public List<Montre> getAllMontres() {
@@ -52,6 +60,10 @@ public List<Montre> getMontresByCatId(@PathVariable("idCat") Long idCat) {
 return montreService.findByCategorieIdCat(idCat);
 }
 
-
+@RequestMapping(value = "/prodscats/" ,method = RequestMethod.GET)
+ public List<Categorie> listCategories() {
+ return montreService.listCategories();
+ }
+ 
 
 }

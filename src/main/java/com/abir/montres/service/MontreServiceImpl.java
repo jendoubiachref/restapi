@@ -13,8 +13,15 @@ import com.abir.montres.repos.MontreRepository;
 public class MontreServiceImpl implements MontreService {
 @Autowired
 MontreRepository montreRepository;
+
+public List<Categorie> listCategories() {
+	return montreRepository.listCategories();
+}
+
+
 @Override
 public Montre saveMontre(Montre p) {
+//	p.setCategorie(p.getCategorie());
 return montreRepository.save(p);
 }
 @Override
@@ -68,4 +75,9 @@ public List<Montre> findByOrderByNomMontreAsc() {
 public List<Montre> trierMontresNomsPrix() {
 	return montreRepository.trierMontresNomsPrix();
 }
+
+
+//aded
+
+ 
 }

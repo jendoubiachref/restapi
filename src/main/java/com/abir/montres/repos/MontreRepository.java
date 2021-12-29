@@ -24,4 +24,12 @@ public interface MontreRepository extends JpaRepository<Montre, Long> {
 	
 	@Query("select p from Montre p order by p.nomMontre ASC, p.prixMontre DESC")
 	List<Montre> trierMontresNomsPrix ();
+	
+	@Query(value = "SELECT p FROM Categorie p ORDER BY id")
+	
+	List<Categorie> listCategories (); 
+	
+	//added
+ 
+
 }
